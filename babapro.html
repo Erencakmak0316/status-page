@@ -34,23 +34,20 @@
   </div>
 
   <script>
-    // mcapi.us API'sini kullanarak sunucu durumunu alıyoruz
+    // mcapi.us API’sini kullanarak sunucu durumunu alıyoruz
     fetch("https://mcapi.us/server/status?ip=win7.aternos.me")
       .then(response => response.json())
       .then(data => {
         const statusEl = document.getElementById("status");
         if (data.online) {
-          // Sunucu açık
           statusEl.textContent = "AÇIK ✅";
           statusEl.style.color = "green";
         } else {
-          // Sunucu kapalı
           statusEl.textContent = "KAPALI ❌";
           statusEl.style.color = "red";
         }
       })
       .catch(error => {
-        // Eğer API'ye ulaşamadıysak hata mesajı göster
         document.getElementById("status").textContent = "Hata!";
         document.getElementById("status").style.color = "orange";
       });
