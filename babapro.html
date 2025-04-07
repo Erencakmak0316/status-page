@@ -34,8 +34,8 @@
   </div>
 
   <script>
-    // mcapi.us API’sini kullanarak sunucu durumunu alıyoruz
-    fetch("https://mcapi.us/server/status?ip=win7.aternos.me")
+    // Aternos sunucu durumu API'sini kullanıyoruz
+    fetch("https://api.mcsrvstat.us/2/win7.aternos.me")
       .then(response => response.json())
       .then(data => {
         const statusEl = document.getElementById("status");
@@ -54,3 +54,4 @@
   </script>
 </body>
 </html>
+
